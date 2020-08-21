@@ -21,7 +21,7 @@ The zoos want to display both the scientific name and the animal name in front o
 
 */
 const displayNames = [];
-let names = zooAnimals.forEach(function(iteration){
+let names = zooAnimals.forEach((iteration) => {
   displayNames.push(`Name: ${iteration.animal_name}, Scientific: ${iteration.scientific_name}`)
 })
 
@@ -34,7 +34,7 @@ The zoos need a list of all their animal's names (animal_name only) converted to
 
 */
 
-const lowCaseAnimalNames = zooAnimals.map(function(iteration) {
+const lowCaseAnimalNames = zooAnimals.map((iteration) => {
   return iteration.animal_name.toLowerCase()
 })
 
@@ -45,7 +45,7 @@ console.log(lowCaseAnimalNames);
 The zoos are concerned about animals with a lower population count. Using filter, create a new array of objects called lowPopulationAnimals which contains only the animals with a population less than 5.
 
 */
-const lowPopulationAnimals = zooAnimals.filter(function(iteration) {
+const lowPopulationAnimals = zooAnimals.filter((iteration) => {
   return iteration.population < 5;
 })
 
@@ -57,7 +57,7 @@ console.log(lowPopulationAnimals);
 The zoos need to know their total animal population across the United States. Find the total population from all the zoos using the .reduce() method. Remember the reduce method takes two arguments: a callback (which itself takes two args), and an initial value for the count.
 
 */
-let populationTotal = zooAnimals.reduce(function(accumulator, item) {
+let populationTotal = zooAnimals.reduce((accumulator, item) => {
   return accumulator += item.population
 }, 0);
 
@@ -73,9 +73,8 @@ console.log(populationTotal);
   * The consume function should return the invocation of cb, passing a and b into cb as arguments
 */
 
-const consume = function(a, b, cb) {
-  return cb(a, b);
-}
+const consume = (a, b, cb) => cb(a, b);
+
 
 
 /* Step 2: Create several functions to callback with consume();
@@ -84,17 +83,14 @@ const consume = function(a, b, cb) {
   * Create a function named greeting that accepts a first and last name and returns "Hello first-name last-name, nice to meet you!"
 */
 
-const add = function(a, b) {
-  return a + b;
-}
+const add = (a, b) => a + b;
 
-const multiply = function(a, b) {
-  return a * b;
-}
 
-const greeting = function(a, b) {
-  return `Hello ${a} ${b}, nice to meet you!`
-}
+const multiply = (a, b) => a * b;
+
+
+const greeting = (a, b) => `Hello ${a} ${b}, nice to meet you!`
+
 
 /* Step 3: Check your work by un-commenting the following calls to consume(): */
 console.log(consume(2, 2, add)); // 4
